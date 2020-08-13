@@ -209,7 +209,7 @@ body{
     grid-gap: 2em;
     height: 20em;
     width: 80%;
-    margin: 0 auto 3em;
+    margin: auto;
     background-image: linear-gradient(to bottom, var(--bg-gray) 49%, var(--cyan) 49%, var(--cyan) 51%, var(--bg-gray) 51%);
 }
 
