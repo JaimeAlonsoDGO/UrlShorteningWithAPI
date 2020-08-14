@@ -30,10 +30,10 @@ myButton.onclick = () =>{
                     <p class="longUrl">${myUrl}</p>
                 </div>
                 <div class="shortUrlContainer">
-                    <p class="shortUrl">${newUrl}</p>
+                    <p class="shortUrl" id="${newUrl}">${newUrl}</p>
                 </div>
                 <div class="copyButtonContainer">
-                    <div class="copyButton" id="copyButton">Copy</div>
+                    <div class="copyButton" id="copyButton" onclick="copyUrl('${newUrl}')" >Copy</div>
                 </div>
             </div>    
             `
@@ -47,6 +47,21 @@ myButton.onclick = () =>{
         }
         
     })
+}
+
+function copyUrl(url){
+    console.log('funciona, aqui està la URL '+ url);
+    const selectElement = document.getElementById(url);
+    let range = document.createRange();
+    range.selectNode(selectElement);
+    document.getSelection().addRange(range);
+
+    try{
+        let result = document.execCommand('copy');
+    } catch(e){
+        console.log('Hubo un error');
+    }
+    document.getSelection().removeAllRanges();
 }
 
 
