@@ -33,7 +33,7 @@ myButton.onclick = () =>{
                     <p class="shortUrl" id="${newUrl}">${newUrl}</p>
                 </div>
                 <div class="copyButtonContainer">
-                    <div class="copyButton" id="copyButton" onclick="copyUrl('${newUrl}')" >Copy</div>
+                    <div class="copyButton" id="${newUrl}-button" onclick="copyUrl('${newUrl}')">Copy</div>
                 </div>
             </div>    
             `
@@ -50,7 +50,7 @@ myButton.onclick = () =>{
 }
 
 function copyUrl(url){
-    console.log('funciona, aqui està la URL '+ url);
+    const copyButton = document.getElementById(url+'-button');
     const selectElement = document.getElementById(url);
     let range = document.createRange();
     range.selectNode(selectElement);
@@ -58,8 +58,11 @@ function copyUrl(url){
 
     try{
         let result = document.execCommand('copy');
+        copyButton.className += ' selected';
+        copyButton.textContent = 'Copied';
+        selectElement.setAttribute('id', "'${url}'-copied");
     } catch(e){
-        console.log('Hubo un error');
+        console.log('Oops, wu have problems');
     }
     document.getSelection().removeAllRanges();
 }
