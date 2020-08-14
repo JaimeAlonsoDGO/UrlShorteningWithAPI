@@ -351,7 +351,7 @@ body{
     grid-template-columns: 1.5fr 1fr .5fr;
     grid-gap: 1em;
     width: 80%;
-    min-height: 3.5em;
+    height: 3.5em;
     margin: 0 auto 1em;
 }
 
@@ -366,7 +366,6 @@ body{
 .shortUrl{
     color: var(--cyan);
     font-size: 1.1em;
-    text-align: right;
     padding-top: .2em;
 }
 
@@ -375,19 +374,21 @@ body{
 .shortUrlContainer{
     display: flex;
     align-items: center;
-    max-width: 100%;
+    
 }
 
 .longUrlContainer{
     padding-left: 2em;
+    overflow: hidden;
 }
 
 .shortUrlContainer{
-    justify-content: end;
+    justify-content: flex-end;
 }
 
 .copyButtonContainer{
     justify-content: center;
+    user-select: none;
 }
 
 .copyButton{
