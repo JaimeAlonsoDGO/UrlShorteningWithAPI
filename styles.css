@@ -351,7 +351,7 @@ body{
     grid-template-columns: 1.5fr 1fr .5fr;
     grid-gap: 1em;
     width: 80%;
-    height: 3.5em;
+    min-height: 3.5em;
     margin: 0 auto 1em;
 }
 
